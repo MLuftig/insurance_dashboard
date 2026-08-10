@@ -145,8 +145,8 @@ st.divider()
 st.subheader("Claim severity distribution")
 st.caption(
     f"Real, individual claim amounts (n={len(severity_pool):,}). Heavily right-skewed — "
-    f"median ${np.median(severity_pool):,.0f}, mean ${severity_pool.mean():,.0f}, "
-    f"max ${severity_pool.max():,.0f}."
+    f"median \\${np.median(severity_pool):,.0f}, mean \\${severity_pool.mean():,.0f}, "
+    f"max \\${severity_pool.max():,.0f}."
 )
 fig = px.histogram(x=severity_pool[severity_pool < 5000], nbins=60, color_discrete_sequence=["#C44E52"])
 fig.update_layout(xaxis_title="Claim amount ($, capped at $5,000 for readability)", yaxis_title="Number of claims", bargap=0.05)
